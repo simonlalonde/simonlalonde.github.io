@@ -2067,10 +2067,10 @@ input, select, textarea {
 		}
 		.box img{
 			display: block;
-			-moz-transition: -moz-transform 0.2s ease-out;
-			-webkit-transition: -webkit-transform 0.2s ease-out;
-			-ms-transition: -ms-transform 0.2s ease-out;
-			transition: transform 0.2s ease-out;
+			-moz-transition: -moz-transform 1s;
+			-webkit-transition: -webkit-transform 1s;
+			-ms-transition: -ms-transform 1s;
+			transition: transform 1s;
 		}
 
 
@@ -2692,10 +2692,10 @@ input, select, textarea {
 	}
 
 		a.image img {
-			-moz-transition: -moz-transform 0.2s ease-out;
-			-webkit-transition: -webkit-transform 0.2s ease-out;
-			-ms-transition: -ms-transform 0.2s ease-out;
-			transition: transform 0.2s ease-out;
+			-moz-transition: -moz-transform 1s;
+			-webkit-transition: -webkit-transform 1s;
+			-ms-transition: -ms-transform 1s;
+			transition: transform 1s;
 		}
 
 		a.image:hover img {
