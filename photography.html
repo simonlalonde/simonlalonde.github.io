@@ -8,6 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/lightbox.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -45,40 +46,28 @@
                                 </header>
                             
                                 
-                                <!-- TEST for Modal Image-->
+                                <!-- TEST for Modal Image
 
-                                <!-- Trigger the Modal -->
-                                <img id="myImg" src="images/pic01.jpg" alt="IMAGE TITLE" style="width:100%;">
-
-                                <!-- The Modal -->
-                                <div id="myModal" class="modal">
-
-                                <!-- The Close Button -->
-                                <span class="close">&times;</span>
-
-                                <!-- Modal Content (The Image) -->
-                                <img class="modal-content" id="img01">
-
-                                <!-- Modal Caption (Image Text) -->
-                                <div id="caption"></div>
-                                </div>
+								<a href="images/pic02.jpg"><img src="images/pic02.jpg"></a>
+								<a href="images/pic03.jpg"><img src="images/pic03.jpg"></a>
+								<a href="images/pic04.jpg"><img src="images/pic04.jpg"></a>
                                                                 
-                                <!--END TEST-->
+                                END TEST-->
                                 
                                 <!--<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>-->
 									<div class="box alt">
 										<div class="row gtr-50 gtr-uniform">
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/test.jpg" data-lightbox="gallery" data-title="Image 1"><img src="images/test.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/test2.jpg" data-lightbox="gallery" data-title="Image 2"><img src="images/test2.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic04.jpg" data-lightbox="gallery" data-title="Image 3"><img src="images/pic04.jpg" alt="" /></a></span></div>
 											<!-- Break -->
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic02.jpg" data-lightbox="gallery" data-title="Image 4"><img src="images/pic02.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic03.jpg" data-lightbox="gallery" data-title="Image 5"><img src="images/pic03.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic04.jpg" data-lightbox="gallery" data-title="Image 6"><img src="images/pic04.jpg" alt="" /></a></span></div>
 											<!-- Break -->
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic02.jpg" data-lightbox="gallery" data-title="Image 7"><img src="images/pic02.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic03.jpg" data-lightbox="gallery" data-title="Image 8"><img src="images/pic03.jpg" alt="" /></a></span></div>
+											<div class="col-4"><span class="image fit"><a href="images/pic04.jpg" data-lightbox="gallery" data-title="Image 9"><img src="images/pic04.jpg" alt="" /></a></span></div>
 										</div>
 									</div>
 							</section>
@@ -121,6 +110,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/lightbox.min.js"></script>
+			<script>
+				lightbox.option({
+				  'resizeDuration': 200,
+				  'wrapAround': true,
+				  'disableScrolling': true
+				})
+			</script>
 	</body>
 </html>
