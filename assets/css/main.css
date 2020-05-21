@@ -86,6 +86,7 @@ input, select, textarea {
 
 	body {
 		-ms-overflow-style: scrollbar;
+		
 	}
 
 	@media screen and (max-width: 480px) {
@@ -122,7 +123,7 @@ input, select, textarea {
 /* Type */
 
 	html {
-		font-size: 16pt;
+		font-size: 12pt;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -3266,7 +3267,7 @@ input, select, textarea {
 			background-color: #212931;
 			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_mountain.jpg");
 			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
+			background-position: center, center, top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
 			background-attachment: scroll,								scroll,														scroll;
 			z-index: -1;
@@ -3340,7 +3341,7 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 0vh;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3483,7 +3484,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 4rem 4rem 2rem 4rem ;
-				min-height: 90vh;
+				min-height: 0vh;
 			}
 
 				#intro p br {
@@ -3500,7 +3501,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 3rem 2rem 1rem 2rem ;
-				min-height: 80vh;
+				min-height: 0vh;
 			}
 
 				#intro h1 {
