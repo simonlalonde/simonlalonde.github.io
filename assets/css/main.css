@@ -2692,11 +2692,11 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
-		a.image img {
-			-moz-transition: -moz-transform 1s;
-			-webkit-transition: -webkit-transform 1s;
-			-ms-transition: -ms-transform 1s;
-			transition: transform 1s;
+		a.image img { /*speed zoom project*/
+			-moz-transition: -moz-transform 0.3s;
+			-webkit-transition: -webkit-transform 0.3s;
+			-ms-transition: -ms-transform 0.3s;
+			transition: transform 0.3s;
 		}
 
 		a.image:hover img {
