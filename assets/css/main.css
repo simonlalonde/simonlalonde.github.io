@@ -4270,7 +4270,7 @@ input, select, textarea {
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			padding: 4rem 4rem 2rem 4rem ;
+			padding: 1rem 4rem 1rem 4rem ;
 			border-left: solid 2px #e2e2e2;
 		}
 
@@ -4765,3 +4765,7 @@ input, select, textarea {
 		list-style-type: none;
 	  }
 
+	  #containerFooter h3,
+	  #containerFooter p, #containerFooter ul {
+		  display: inline;
+	  }
