@@ -4372,6 +4372,7 @@ input, select, textarea {
 
 			#footer {
 				display: block;
+				margin: 0 auto;
 			}
 
 				#footer > section {
@@ -4765,7 +4766,8 @@ input, select, textarea {
 		list-style-type: none;
 	  }
 
-	  #containerFooter h3,
+	#containerFooter h3,
 	  #containerFooter p, #containerFooter ul {
-		  display: inline;
+		display: inline;
 	  }
+	  
