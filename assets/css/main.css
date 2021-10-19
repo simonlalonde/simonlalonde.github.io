@@ -2916,9 +2916,13 @@ input, select, textarea {
 	ol {
 		list-style: decimal;
 		margin: 0 0 2rem 0;
-		padding-left: 1.25rem;
+		padding-left: 2rem;
+		margin-top: -2rem;
 	}
-
+	ol.special {
+		list-style-position: inside;
+		margin-bottom: 0.5rem;
+	}
 		ol li {
 			padding-left: 0.25rem;
 		}
@@ -2926,9 +2930,14 @@ input, select, textarea {
 	ul {
 		list-style: disc;
 		margin: 0 0 2rem 0;
-		padding-left: 1rem;
+		padding-left: 2rem;
+		
 	}
 
+	ul.special{
+		margin-top: -1rem;
+		margin-bottom: 1rem;
+	}
 		ul li {
 			padding-left: 0.5rem;
 		}
