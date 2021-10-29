@@ -2713,7 +2713,7 @@ input, select, textarea {
 				display: block;
 				margin: 2.5rem 0;
 				width: 100%;
-				cursor: pointer;
+				cursor: zoom-in;
 			}
 	
 				.image.fitspecial:first-child {
