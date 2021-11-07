@@ -2163,6 +2163,8 @@ input, select, textarea {
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
+		overflow: hidden;
+  		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
