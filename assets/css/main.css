@@ -2852,6 +2852,7 @@ input, select, textarea {
 				width: 100%;
 			}
 
+
 		@media screen and (max-width: 480px) {
 
 			ul.actions:not(.fixed) {
