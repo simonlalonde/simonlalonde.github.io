@@ -3350,7 +3350,7 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_mountain.jpg");
+			/*background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_mountain.jpg");*/
 			background-size: auto,								auto,														100% auto;
 			background-position: center, center, top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -3738,8 +3738,8 @@ input, select, textarea {
 		overflow: hidden;
 		padding: 0 2rem 0 0;
 		position: relative;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		width: 100%;
+		max-width: 100%;
 		z-index: 2;
 	}
 
@@ -3875,8 +3875,8 @@ input, select, textarea {
 		background-color: #ffffff;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		width: 100%;
+		max-width: 100%;
 		z-index: 2;
 	}
 
@@ -3895,7 +3895,11 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			/*padding: 8rem 8rem 6rem 8rem ;*/
+			padding-top: 8rem;
+			padding-right: max(8rem, 5%);
+			padding-bottom: 6rem;
+			padding-left: max(8rem, 5%);
 		}
 
 			#main > .post header.major > .date {
@@ -4074,8 +4078,8 @@ input, select, textarea {
 		cursor: default;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		width: 100%;
+		max-width: 100%;
 		z-index: 2;
 	}
 
@@ -4512,8 +4516,8 @@ input, select, textarea {
 		text-align: center;
 		text-transform: uppercase;
 		margin: 4rem auto 8rem auto;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		width: 100%;
+		max-width: 100%;
 		z-index: 2;
 	}
 
