@@ -2067,7 +2067,6 @@ input, select, textarea {
 
 		.box.alt {
 			border: 0;
-			border-radius: 0;
 			padding: 0;
 			position: relative;
 			overflow: hidden;
@@ -2216,6 +2215,7 @@ input, select, textarea {
 		button.fit,
 		.button.fit {
 			width: 100%;
+			white-space: normal;
 		}
 
 		input[type="submit"].small,
