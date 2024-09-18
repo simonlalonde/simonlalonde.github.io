@@ -3897,9 +3897,9 @@ input, select, textarea {
 		#main > .post {
 			/*padding: 8rem 8rem 6rem 8rem ;*/ /*HERE*/
 			padding-top: 8rem;
-			padding-right: max(15%);
+			padding-right: max(20%);
 			padding-bottom: 6rem;
-			padding-left: max(15%);
+			padding-left: max(20%);
 		}
 
 			#main > .post header.major > .date {
