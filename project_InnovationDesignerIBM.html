@@ -8,6 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/lightbox.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -85,10 +86,21 @@
 								<p>
 									Whether a technological solution is highly technical or not, it is essential for the designer to understand its users, as there is always a person who will interact with or be affected by it. Depending on the needs of the project, the designer may seek to understand users by facilitating activities such as Stakeholder Mapping and Empathy Mapping. They may also conduct ethnography sessions or interview users to understand their goals, needs, and challenges.
 								</p>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-4"><span class="image fit"><a href="images/InnovationDesignerIBM/01_BusinessLandscape.png" data-lightbox="gallery" data-title="Example of a Business Landscape activity"><img src="images/InnovationDesignerIBM/01_BusinessLandscapeSquare.png" alt="" /></a></span></div>
+										<div class="col-4"><span class="image fit"><a href="images/InnovationDesignerIBM/02_StakeholderMapping.png" data-lightbox="gallery" data-title="Example of a Stakeholder Mapping activity"><img src="images/InnovationDesignerIBM/02_StakeholerMapping_Square.png" alt="" /></a></span></div>
+										<div class="col-4"><span class="image fit"><a href="images/InnovationDesignerIBM/03_EmpathyMapping.png" data-lightbox="gallery" data-title="Example of a Empathy Mapping activity"><img src="images/InnovationDesignerIBM/03_EmpathyMapping_Square.png" alt="" /></a></span></div>
+										<!-- Break -->
+									</div>
+								</div>
 								<h3>Understand the As-Is Processes</h3>
 								<p>
 									Finally, activities like the As-Is Process Discovery are run conjointly by the designer and the technical team to understand the flow of how the business opportunity, the technologies and stakeholders interact and where the challenges are.
+									<br> <br>
+									Here is an example of what an As-Is Scenario activity could look like:
 								</p>
+								<span class="image fit"><img src="images/InnovationDesignerIBM/04_AsIsScenario.png" alt="" /></span>
 								<hr />
 								<h2>Define a Solution</h2>
 								<p>
@@ -161,13 +173,21 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/lightbox.min.js"></script>
+		<script>
+			lightbox.option({
+			  'resizeDuration': 200,
+			  'wrapAround': true,
+			  'disableScrolling': true
+			})
+		</script>
 
 	</body>
 </html>
