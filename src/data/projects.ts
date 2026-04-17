@@ -73,7 +73,7 @@ export const projects: CaseStudy[] = [
     slug: "ai-mortgage-document-analysis",
     category: "Design Strategy & Agentic AI",
     client: "Large Canadian Financial Institution",
-    year: "202",
+    year: "2025",
     heroImage: "/images/UC_AIMortgage/AI_Mortgage_Hero.png",
     hook: "Anchoring a multi-year enterprise agreement through a high-impact, 3-week AI pilot and vendor selection strategy.",
     context: "An enterprise client needed to select an AI vendor to revitalize their IT support, requiring a rapid demonstration of value within a highly competitive procurement window.",
