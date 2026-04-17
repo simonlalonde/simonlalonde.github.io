@@ -92,3 +92,4 @@ For a strategy designer portfolio, use:
 - Minimalist textures (concrete, paper, glass).
 - Candid shots of workshops or "thinking" environments (post-its, sketches).
 - Professional, grayscale portraits.
+
