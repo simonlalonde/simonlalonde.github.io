@@ -69,12 +69,12 @@ export type SectionType =
 export const projects: CaseStudy[] = [
   {
     id: "1",
-    title: "AI-Powered IT Helpdesk Agent",
-    slug: "ai-helpdesk-enterprise",
-    category: "Strategy & AI",
-    client: "Confidential Enterprise Client",
-    year: "2024",
-    heroImage: "https://picsum.photos/seed/helpdesk-hero/1200/800",
+    title: "Agentic AI for Mortgage Document Analysis",
+    slug: "ai-mortgage-document-analysis",
+    category: "Design Strategy & Agentic AI",
+    client: "Large Canadian Financial Institution",
+    year: "202",
+    heroImage: "/images/UC_AIMortgage/AI_Mortgage_Hero.png",
     hook: "Anchoring a multi-year enterprise agreement through a high-impact, 3-week AI pilot and vendor selection strategy.",
     context: "An enterprise client needed to select an AI vendor to revitalize their IT support, requiring a rapid demonstration of value within a highly competitive procurement window.",
     stakes: "The outcome would define the organization's remote support strategy for the next five years, with millions in operational efficiency at stake.",
