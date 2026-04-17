@@ -45,6 +45,18 @@ export function Photography() {
 
   const closeLightbox = () => setSelectedPhotoIndex(null);
 
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedPhotoIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedPhotoIndex]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedPhotoIndex === null) return;
@@ -121,7 +133,7 @@ export function Photography() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="absolute left-4 md:left-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity"
+              className="absolute left-4 md:left-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity hidden md:flex"
               onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
             >
               <ChevronLeft className="h-10 w-10" />
@@ -130,36 +142,65 @@ export function Photography() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="absolute right-4 md:right-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity"
+              className="absolute right-4 md:right-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity hidden md:flex"
               onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
             >
               <ChevronRight className="h-10 w-10" />
             </Button>
 
-            <motion.div 
-              key={selectedPhotoIndex}
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img 
-                src={photos[selectedPhotoIndex].src} 
-                alt={photos[selectedPhotoIndex].title} 
-                className="max-w-full max-h-[80vh] object-contain border shadow-2xl"
-                referrerPolicy="no-referrer"
-              />
-              <div className="mt-8 text-center">
-                <p className="text-sm font-bold tracking-[0.3em] uppercase mb-2">
-                  {photos[selectedPhotoIndex].title}
-                </p>
-                <p className="text-xs opacity-50">
-                  {selectedPhotoIndex + 1} / {photos.length}
-                </p>
-              </div>
-            </motion.div>
+            <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center pointer-events-none">
+              <motion.div 
+                key={selectedPhotoIndex}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x > 100) prevPhoto();
+                  else if (info.offset.x < -100) nextPhoto();
+                }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={photos[selectedPhotoIndex].src} 
+                  alt={photos[selectedPhotoIndex].title} 
+                  className="max-w-full max-h-[70vh] object-contain border shadow-2xl pointer-events-none select-none"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="mt-8 text-center">
+                  <p className="text-sm font-bold tracking-[0.3em] uppercase mb-2">
+                    {photos[selectedPhotoIndex].title}
+                  </p>
+                  <p className="text-xs opacity-50 mb-6">
+                    {selectedPhotoIndex + 1} / {photos.length}
+                  </p>
+                  
+                  {/* Mobile Navigation Controls */}
+                  <div className="flex gap-8 justify-center items-center md:hidden">
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="rounded-full h-12 w-12 border border-border/50 hover:bg-muted"
+                      onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </Button>
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="rounded-full h-12 w-12 border border-border/50 hover:bg-muted"
+                      onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

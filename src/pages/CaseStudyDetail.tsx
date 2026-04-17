@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { projects, SectionType } from "@/data/projects";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Lock, X } from "lucide-react";
+import { ArrowLeft, Lock, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useRef, useState, useEffect, FormEvent, useCallback } from "react";
@@ -77,6 +77,18 @@ export function CaseStudyDetail() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
+
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   useEffect(() => {
     if (isProtected) {
@@ -226,23 +238,91 @@ export function CaseStudyDetail() {
               <X className="h-6 w-6" />
             </Button>
 
-            <div className="relative w-full h-full flex items-center justify-center gap-4" onClick={(e) => e.stopPropagation()}>
+            {/* Navigation Buttons */}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute left-4 md:left-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity hidden md:flex"
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setSelectedImage((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
+              }}
+              disabled={selectedImage === 0}
+            >
+              <ChevronLeft className="h-10 w-10" />
+            </Button>
+
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute right-4 md:right-10 z-50 rounded-none h-16 w-16 opacity-50 hover:opacity-100 transition-opacity hidden md:flex"
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setSelectedImage((prev) => (prev !== null && prev < carouselImages.length - 1 ? prev + 1 : prev));
+              }}
+              disabled={selectedImage === carouselImages.length - 1}
+            >
+              <ChevronRight className="h-10 w-10" />
+            </Button>
+
+            <div className="relative w-full h-full flex items-center justify-center gap-4 pointer-events-none" onClick={(e) => e.stopPropagation()}>
               <motion.div
                 key={selectedImage}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x > 100 && selectedImage > 0) {
+                    setSelectedImage(selectedImage - 1);
+                  } else if (info.offset.x < -100 && selectedImage < carouselImages.length - 1) {
+                    setSelectedImage(selectedImage + 1);
+                  }
+                }}
                 transition={{ duration: 0.3 }}
-                className="max-w-5xl max-h-full flex flex-col items-center gap-4"
+                className="max-w-5xl max-h-full flex flex-col items-center gap-4 pointer-events-auto cursor-grab active:cursor-grabbing"
               >
                 <img
                   src={carouselImages[selectedImage]}
                   alt={`Full size view ${selectedImage}`}
-                  className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+                  className="max-w-full max-h-[70vh] object-contain shadow-2xl pointer-events-none select-none"
                   referrerPolicy="no-referrer"
                 />
-                <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-40">
-                  {selectedImage + 1} / {carouselImages.length}
-                </p>
+                <div className="flex flex-col items-center gap-6 mt-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.3em] opacity-40">
+                    {selectedImage + 1} / {carouselImages.length}
+                  </p>
+                  
+                  {/* Mobile Navigation Controls */}
+                  <div className="flex gap-8 justify-center items-center md:hidden">
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="rounded-full h-12 w-12 border border-border/50 hover:bg-muted"
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        setSelectedImage((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
+                      }}
+                      disabled={selectedImage === 0}
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </Button>
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="rounded-full h-12 w-12 border border-border/50 hover:bg-muted"
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        setSelectedImage((prev) => (prev !== null && prev < carouselImages.length - 1 ? prev + 1 : prev));
+                      }}
+                      disabled={selectedImage === carouselImages.length - 1}
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </Button>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
